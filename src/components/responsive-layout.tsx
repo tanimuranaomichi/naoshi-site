@@ -8,6 +8,7 @@ import {
   Burger,
   Menu,
   Button,
+  useMantineTheme,
 } from "@mantine/core";
 import Link from "next/link";
 import { useDisclosure } from "@mantine/hooks";
@@ -30,6 +31,8 @@ export function ResponsiveLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const theme = useMantineTheme();
+
   return (
     <AppShell header={{ height: 60, offset: false }}>
       <AppShell.Header
@@ -67,11 +70,11 @@ export function ResponsiveLayout({
         <SimpleGrid cols={{ base: 1, [BREAKPOINT]: 2 }} bg="black" spacing="4">
           <Box p="4" hiddenFrom={BREAKPOINT}>
             <Group
-              justify="space-between"
-              style={{ flex: 1 }}
               px="md"
               h="60"
               bg="white"
+              style={{ borderRadius: theme.radius.sm }}
+              justify="space-between"
             >
               <Image
                 src="/logo-black.svg"
@@ -80,9 +83,7 @@ export function ResponsiveLayout({
                 width="100"
                 unoptimized
               />
-              <Box>
-                <BurgerMenu />
-              </Box>
+              <BurgerMenu />
             </Group>
           </Box>
           <MainVisual />
