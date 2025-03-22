@@ -1,9 +1,9 @@
 "use client";
 
-import { Text, Stack, Card } from "@mantine/core";
+import { Text, Stack, Card, Anchor, Flex } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
 import NextImage from "next/image";
-import { CONTENTS } from "./constants";
+import { CONTENTS, SNS_LINKS } from "./constants";
 import { ContentCard } from "@/components/content-card";
 
 export default function Home() {
@@ -22,7 +22,19 @@ export default function Home() {
             unoptimized
           />
 
-          <Text>WEB ENGINEER / CIVIC TECH</Text>
+          <Text>WEB ENGINEER / CIVIC TECH / 3DCG / MOTION GRAPHICS</Text>
+          <Flex gap="xs">
+            {SNS_LINKS.map((sns) => (
+              <Anchor
+                key={sns.name}
+                href={sns.url}
+                target="_blank"
+                style={{ color: "green", whiteSpace: "nowrap" }}
+              >
+                {sns.name}
+              </Anchor>
+            ))}
+          </Flex>
         </Stack>
       </Card>
       {CONTENTS.map((content) => (

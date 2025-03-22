@@ -13,3 +13,26 @@ export const CONTENTS = [
     url: "https://inspiring-night.peatix.com",
   },
 ];
+
+export const SNS_LINKS = [
+  {
+    name: "note",
+    url: "https://note.com/tanimuranaomichi",
+  },
+  {
+    name: "YOUTRUST",
+    url: "https://youtrust.jp/users/tanimuranaomichi",
+  },
+  {
+    name: "X",
+    url: "https://x.com/tanimuranaomichi",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/tanimuranaomichi",
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/profile.php?id=61572807153569",
+  },
+];
