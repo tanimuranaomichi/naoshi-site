@@ -49,7 +49,8 @@ export function ResponsiveLayout({
               width="100"
               unoptimized
             />
-            <Group ml="xl" gap="xs">
+            {/* TODO: 各種ページが実装されたらコメントアウトを外す */}
+            {/* <Group ml="xl" gap="xs">
               {MENU_ITEMS.map((item) => (
                 <Button
                   key={item.label}
@@ -61,7 +62,7 @@ export function ResponsiveLayout({
                   {item.label}
                 </Button>
               ))}
-            </Group>
+            </Group> */}
           </Group>
         </Group>
       </AppShell.Header>
@@ -83,7 +84,8 @@ export function ResponsiveLayout({
                 width="100"
                 unoptimized
               />
-              <BurgerMenu />
+              {/* TODO: 各種ページが実装されたらコメントアウトを外す */}
+              {/* <BurgerMenu /> */}
             </Group>
           </Box>
           <MainVisual />
