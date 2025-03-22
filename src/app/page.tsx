@@ -1,31 +1,33 @@
 "use client";
 
-import { Text, useMantineTheme, Center, Stack } from "@mantine/core";
+import { Text, Stack, Card } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
-import Image from "next/image";
+import NextImage from "next/image";
+import { CONTENTS } from "./constants";
+import { ContentCard } from "@/components/content-card";
 
 export default function Home() {
   const { height } = useViewportSize();
-
-  const theme = useMantineTheme();
   const adjustedHeight = height - 4 * 2;
 
   return (
-    <Center
-      h={adjustedHeight}
-      bg="white"
-      style={{ borderRadius: theme.radius.sm }}
-    >
-      <Stack gap="md" align="center">
-        <Image
-          src="/logo-black.svg"
-          alt="naoshi"
-          height="50"
-          width="200"
-          unoptimized
-        />
-        <Text>WEB ENGINEER / CIVIC TECH / 3DCG / MOTION GRAPHICS</Text>
-      </Stack>
-    </Center>
+    <Stack gap="4">
+      <Card h={adjustedHeight} style={{ justifyContent: "center" }}>
+        <Stack gap="md" align="center">
+          <NextImage
+            src="/logo-black.svg"
+            alt="naoshi"
+            height="50"
+            width="200"
+            unoptimized
+          />
+
+          <Text>WEB ENGINEER / CIVIC TECH</Text>
+        </Stack>
+      </Card>
+      {CONTENTS.map((content) => (
+        <ContentCard key={content.title} {...content} />
+      ))}
+    </Stack>
   );
 }

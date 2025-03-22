@@ -24,7 +24,7 @@ const MENU_ITEMS = [
   { label: "PROFILE", href: "/profile" },
 ];
 
-const BREAKPOINT = "sm";
+export const BREAKPOINT = "sm";
 
 export function ResponsiveLayout({
   children,
