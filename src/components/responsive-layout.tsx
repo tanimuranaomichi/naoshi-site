@@ -5,24 +5,19 @@ import {
   Group,
   SimpleGrid,
   Box,
-  Burger,
-  Menu,
-  Button,
   useMantineTheme,
 } from "@mantine/core";
-import Link from "next/link";
-import { useDisclosure } from "@mantine/hooks";
 import Image from "next/image";
 
 import { MainVisual } from "./main-visual";
 
-const MENU_ITEMS = [
-  { label: "HOME", href: "/" },
-  { label: "DEVELOPMENT", href: "/development" },
-  { label: "CREATIONS", href: "/creations" },
-  { label: "ACTIVITIES", href: "/activities" },
-  { label: "PROFILE", href: "/profile" },
-];
+// const MENU_ITEMS = [
+//   { label: "HOME", href: "/" },
+//   { label: "DEVELOPMENT", href: "/development" },
+//   { label: "CREATIONS", href: "/creations" },
+//   { label: "ACTIVITIES", href: "/activities" },
+//   { label: "PROFILE", href: "/profile" },
+// ];
 
 export const BREAKPOINT = "sm";
 
@@ -96,22 +91,22 @@ export function ResponsiveLayout({
   );
 }
 
-const BurgerMenu = () => {
-  const [opened, { toggle }] = useDisclosure();
+// const BurgerMenu = () => {
+//   const [opened, { toggle }] = useDisclosure();
 
-  return (
-    <Menu shadow="md" width={200}>
-      <Menu.Target>
-        <Burger opened={opened} onClick={toggle} size="sm" />
-      </Menu.Target>
+//   return (
+//     <Menu shadow="md" width={200}>
+//       <Menu.Target>
+//         <Burger opened={opened} onClick={toggle} size="sm" />
+//       </Menu.Target>
 
-      <Menu.Dropdown>
-        {MENU_ITEMS.map((item) => (
-          <Menu.Item key={item.label} onClick={toggle}>
-            <Link href={item.href}>{item.label}</Link>
-          </Menu.Item>
-        ))}
-      </Menu.Dropdown>
-    </Menu>
-  );
-};
+//       <Menu.Dropdown>
+//         {MENU_ITEMS.map((item) => (
+//           <Menu.Item key={item.label} onClick={toggle}>
+//             <Link href={item.href}>{item.label}</Link>
+//           </Menu.Item>
+//         ))}
+//       </Menu.Dropdown>
+//     </Menu>
+//   );
+// };
