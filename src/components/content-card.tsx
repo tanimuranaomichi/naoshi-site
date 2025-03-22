@@ -27,6 +27,7 @@ export const ContentCard: FC<Content> = (content) => (
         height={150}
         width="auto"
         fit="contain"
+        mt={{ base: "8", [BREAKPOINT]: "0" }}
       />
     </SimpleGrid>
   </Card>
