@@ -1,6 +1,6 @@
 "use client";
 
-import { Text, Stack, Card, Anchor, Flex } from "@mantine/core";
+import { Text, Stack, Card, Anchor, Flex, Center, Title } from "@mantine/core";
 import NextImage from "next/image";
 import { CONTENTS, SNS_LINKS } from "./constants";
 import { ContentCard } from "@/components/content-card";
@@ -30,6 +30,9 @@ export default function Home() {
           </Text>
           <_SNSLinks />
         </Stack>
+      </Card>
+      <Card h="80" style={{ justifyContent: "center" }} p="xl">
+        <Title order={2}>PROJECTS</Title>
       </Card>
       {CONTENTS.map((content) => (
         <ContentCard key={content.title} {...content} />
