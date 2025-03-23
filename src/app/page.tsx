@@ -1,14 +1,14 @@
 "use client";
 
 import { Text, Stack, Card, Anchor, Flex } from "@mantine/core";
-import { useViewportSize } from "@mantine/hooks";
 import NextImage from "next/image";
 import { CONTENTS, SNS_LINKS } from "./constants";
 import { ContentCard } from "@/components/content-card";
+import { useIsMobile } from "./hooks";
 
 export default function Home() {
-  const { height } = useViewportSize();
-  const adjustedHeight = height - 4 * 2;
+  const isMobile = useIsMobile();
+  const adjustedHeight = isMobile ? "500px" : "calc(100vh - 8px)";
 
   return (
     <Stack gap="4">
