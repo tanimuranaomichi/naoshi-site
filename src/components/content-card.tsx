@@ -10,7 +10,7 @@ type Content = {
 };
 
 export const ContentCard: FC<Content> = (content) => (
-  <Card key={content.title}>
+  <Card key={content.title} p="xl">
     <SimpleGrid cols={{ base: 1, [BREAKPOINT]: 2 }} spacing="4">
       <Flex direction="column">
         <Text size="xl" fw="600" mb="xs">
