@@ -1,6 +1,6 @@
 "use client";
 
-import { Text, Stack, Card, Anchor, Flex, Center, Title } from "@mantine/core";
+import { Text, Stack, Card, Anchor, Flex, Title } from "@mantine/core";
 import NextImage from "next/image";
 import { CONTENTS, SNS_LINKS } from "./constants";
 import { ContentCard } from "@/components/content-card";
