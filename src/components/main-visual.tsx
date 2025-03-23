@@ -4,11 +4,13 @@ import { Box } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { useIsMobile } from "@/app/hooks";
 
 export const MainVisual = () => {
   const { width } = useViewportSize();
   const boxRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (!boxRef.current || !canvasRef.current) return;
@@ -27,7 +29,7 @@ export const MainVisual = () => {
     const scene = new THREE.Scene();
     const aspect = canvasWidth / canvasHeight;
     const camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 1000);
-    camera.position.set(0, 0, 5);
+    camera.position.set(0, 0, 1.5);
 
     const renderer = new THREE.WebGLRenderer({
       canvas,
@@ -71,7 +73,13 @@ export const MainVisual = () => {
   }, [width]);
 
   return (
-    <Box ref={boxRef} style={{ width: "100%", height: "100vh" }}>
+    <Box
+      ref={boxRef}
+      style={{
+        width: "100%",
+        height: isMobile ? "300px" : "100vh",
+      }}
+    >
       <canvas ref={canvasRef} />
     </Box>
   );

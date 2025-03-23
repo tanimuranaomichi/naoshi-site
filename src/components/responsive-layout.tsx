@@ -6,6 +6,7 @@ import {
   SimpleGrid,
   Box,
   useMantineTheme,
+  MantineSize,
 } from "@mantine/core";
 import Image from "next/image";
 
@@ -19,7 +20,7 @@ import { MainVisual } from "./main-visual";
 //   { label: "PROFILE", href: "/profile" },
 // ];
 
-export const BREAKPOINT = "sm";
+export const MOBILE_BREAKPOINT: MantineSize = "sm";
 
 export function ResponsiveLayout({
   children,
@@ -33,7 +34,7 @@ export function ResponsiveLayout({
       <AppShell.Header
         bg="transparent"
         style={{ borderBottom: "none" }}
-        visibleFrom={BREAKPOINT}
+        visibleFrom={MOBILE_BREAKPOINT}
       >
         <Group h="100%" px="md">
           <Group justify="space-between" style={{ flex: 1 }}>
@@ -63,8 +64,12 @@ export function ResponsiveLayout({
       </AppShell.Header>
 
       <AppShell.Main>
-        <SimpleGrid cols={{ base: 1, [BREAKPOINT]: 2 }} bg="black" spacing="4">
-          <Box p="4" hiddenFrom={BREAKPOINT}>
+        <SimpleGrid
+          cols={{ base: 1, [MOBILE_BREAKPOINT]: 2 }}
+          bg="black"
+          spacing="4"
+        >
+          <Box p="4" hiddenFrom={MOBILE_BREAKPOINT}>
             <Group
               px="md"
               h="60"
