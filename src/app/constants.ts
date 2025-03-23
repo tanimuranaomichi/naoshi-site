@@ -16,20 +16,28 @@ export const CONTENTS = [
 
 export const SNS_LINKS = [
   {
-    name: "note",
-    url: "https://note.com/tanimuranaomichi",
-  },
-  {
-    name: "YOUTRUST",
-    url: "https://youtrust.jp/users/tanimuranaomichi",
-  },
-  {
     name: "X",
     url: "https://x.com/tanimuranaomichi",
   },
   {
     name: "Instagram",
     url: "https://www.instagram.com/tanimuranaomichi",
+  },
+  {
+    name: "note",
+    url: "https://note.com/tanimuranaomichi",
+  },
+  {
+    name: "Zenn",
+    url: "https://zenn.dev/tanimuranaomich",
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/tanimuranaomichi",
+  },
+  {
+    name: "YouTrust",
+    url: "https://youtrust.jp/users/tanimuranaomichi",
   },
   {
     name: "Facebook",

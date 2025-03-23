@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <Stack gap="4">
-      <Card h={adjustedHeight} style={{ justifyContent: "center" }}>
+      <Card h={adjustedHeight} style={{ justifyContent: "center" }} p="xl">
         <Stack gap="md" align="center">
           <NextImage
             src="/logo-black.svg"
@@ -21,20 +21,14 @@ export default function Home() {
             width="200"
             unoptimized
           />
-
-          <Text>WEB ENGINEER / CIVIC TECH / 3DCG / MOTION GRAPHICS</Text>
-          <Flex gap="xs">
-            {SNS_LINKS.map((sns) => (
-              <Anchor
-                key={sns.name}
-                href={sns.url}
-                target="_blank"
-                style={{ color: "green", whiteSpace: "nowrap" }}
-              >
-                {sns.name}
-              </Anchor>
-            ))}
-          </Flex>
+          <Text mt="md">
+            教育とテクノロジーを軸に活動するWebエンジニア。atama
+            plus株式会社でWebアプリケーション開発を担当しています。
+            <br />
+            プライベートでは、緊急避妊薬へのアクセスを向上させる「アフターピル検索」サービスの開発運営と、多様な視点を共有する対話イベント「INSPIRING
+            NIGHT」の主催に取り組んでいます。
+          </Text>
+          <_SNSLinks />
         </Stack>
       </Card>
       {CONTENTS.map((content) => (
@@ -43,3 +37,18 @@ export default function Home() {
     </Stack>
   );
 }
+
+const _SNSLinks = () => (
+  <Flex wrap="wrap" gap="xs">
+    {SNS_LINKS.map((sns) => (
+      <Anchor
+        key={sns.name}
+        href={sns.url}
+        target="_blank"
+        style={{ color: "green", whiteSpace: "nowrap" }}
+      >
+        {sns.name}
+      </Anchor>
+    ))}
+  </Flex>
+);
